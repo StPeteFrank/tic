@@ -1,5 +1,5 @@
 const main = () => {
-  document.querySelector('h1').textContent += '?'
+  document.querySelector('h1').textContent
 }
 // How to play tic tac toe
 
