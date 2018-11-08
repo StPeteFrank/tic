@@ -9,10 +9,10 @@ const main = () => {
 // To win player will need to have three boxes marked in a horizontal, vertical, or diagonal line
 // Cannot win by having a line that is not  horizontal, vertical, or diagonal
 // Players cannot mark closed boxes
+
 // Determine where the possible winning lines are
-
 // The game board is a square made up of nine squares stacked 3 wide and 3 high
-// A win is defined by a player occupying every space in a row, column, or diagonal
+// A win is defined by a player occupying every space in a row, column, or diagonal line
 
 // Possible wins for player X
 // Rows:
@@ -40,9 +40,12 @@ const main = () => {
 // The first diagonal is comprised of spaces 1,5,9
 // The second diagonal is comprised of spaces 3,5,7
 
+// Player X makes choice
+// Player O makes choice
+// Players alternate moves until one of the possible wins conditions is met
 // Remember which player marked which box
-// Determine if there is a winner or if the game is a tie
-// If someone wins decide on playing again
-// Give option to keep score
+// If none of the possible win conditions are met the game results in a tie
+// If a winner is determined or game results in a tie they may play again
+// Players may keep score if they wish
 
 document.addEventListener('DOMContentLoaded', main)
