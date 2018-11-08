@@ -17,6 +17,52 @@ const main = () => {
 
 // Possible wins for Player X:
 
+// let spaces = {
+//   spaceOne: 'open',
+//   spaceTwo: 'open',
+//   spaceThree: 'open',
+//   spaceFour: 'open',
+//   spaceFive: 'open',
+//   spaceSix: 'open',
+//   spaceSeven: 'open',
+//   spaceEight: 'open',
+//   spaceNine: 'open',
+// }
+
+let spaces = {
+  spaceOne: 'O',
+  spaceTwo: 'open',
+  spaceThree: 'open',
+  spaceFour: 'open',
+  spaceFive: 'O',
+  spaceSix: 'open',
+  spaceSeven: 'open',
+  spaceEight: 'open',
+  spaceNine: 'open'
+}
+
+const checkWins = (player) => {
+  if (spaces.spaceOne === player && spaces.spaceTwo === player && spaces.spaceThree === player) {
+    return player
+  } else if (spaces.spaceFour === player && spaces.spaceFive === player && spaces.spaceSix === player) {
+    return player
+  } else if (spaces.spaceSeven === player && spaces.spaceEight === player && spaces.spaceNine === player) {
+    return player
+  } else if (spaces.spaceOne === player && spaces.spaceFour === player && spaces.spaceSeven === player) {
+    return player
+  } else if (spaces.spaceTwo === player && spaces.spaceFive === player && spaces.spaceEight === player) {
+    return player
+  } else if (spaces.spaceThree === player && spaces.spaceSix === player && spaces.spaceNine === player) {
+    return player
+  } else if (spaces.spaceOne === player && spaces.spaceFive === player && spaces.spaceNine === player) {
+    return player
+  } else if (spaces.spaceThree === player && spaces.spaceFive === player && spaces.spaceSeven === player) {
+    return player
+  }
+}
+
+console.log(checkWins('O'))
+
 // if space 1 is an X and space 2 is an X and space 3 is an X: X wins
 // if space 4 is an X and space 5 is an X and space 6 is an X: X wins
 // if space 7 is an X and space 8 is an X and space 9 is an X: X wins
