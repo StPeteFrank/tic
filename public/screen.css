@@ -12,25 +12,32 @@ body {
   min-height: 100%;
   font: 2vw / 1 sans-serif;
 }
+
 header {
   display: flex;
   justify-content: center;
   background-position: center;
 }
+
 header img {
   opacity: 0.5;
 }
+
 section {
   display: flex;
   align-items: center;
   justify-content: center;
   background-position: center;
 }
+
 button {
   border-radius: 6px;
   width: 20vw;
   height: 20vw;
   background-color: rgb(9, 175, 175);
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
 }
 
 .the-rows {

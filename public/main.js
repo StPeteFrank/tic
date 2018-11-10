@@ -1,6 +1,9 @@
 const main = () => {
   document.querySelector('h1').textContent
 }
+
+// NOTES -------------------------------------------------------------------------
+
 // How to play tic tac toe
 
 // The game must be two players
@@ -17,49 +20,81 @@ const main = () => {
 
 // Possible wins for Player X:
 
-// let spaces = {
-//   spaceOne: 'open',
-//   spaceTwo: 'open',
-//   spaceThree: 'open',
-//   spaceFour: 'open',
-//   spaceFive: 'open',
-//   spaceSix: 'open',
-//   spaceSeven: 'open',
-//   spaceEight: 'open',
-//   spaceNine: 'open',
-// }
+// END NOTES -------------------------------------------------------------------------
 
-let playerOne = true
+// sets 1st player to either X or O - true is O, false is X 
+let playerOne = false
 
-const alternatePlayers = () => {
-  if (playerOne) {
-    console.log(button)
-    this.textContent = 'X'
-  }
-}
-
-const buttons = document.querySelectorAll('button')
-
-buttons.forEach(button => {
+// querySelectorAll makes an array-like object for each button
+// forEach statement attaches an event handler to each of those
+// (gavin didn't cover this, just saves having to attach the event individually)
+document.querySelectorAll('button').forEach(button => {
   button.addEventListener('click', () => {
-    playerOne ? button.textContent = 'O' : button.textContent = 'X'
+    let currentPlayer
+    // this checks the status of playerOne and if true - 
+    // sets the value of current player to O
+    // if false, sets if to X
+    playerOne ? currentPlayer = 'O' : currentPlayer = 'X'
+    // changes the value of currentPlayer so it alternates
     playerOne ? playerOne = false : playerOne = true
+    // sets the text of the chosen button to value of currentPlayer (X or O)
+    button.textContent = currentPlayer
+    // sets the "disabled" property of the chosen button to "disabled" so 
+    // it can only get picked once
     button.setAttribute('disabled', 'disabled')
+    // sets the value of the chosen object in the spaces object (see below)
+    // from open to the value of currentPlayer (X or O)
+    // targets this from alt tags I put on each button in index.html
+    spaces[button.getAttribute('alt')] = currentPlayer
+    // currently all this does is count the amount of spaces that are set to "open"
+    // eventually it will use this to say the game is a draw when that number reaches 0
+    checkIfBoardIsFull()
+    console.log(checkWins(currentPlayer))
   })
 })
 
+// NOTES -------------------------------------------------------------------------
+// for each click, the corresponding space to the chosen one must be set to 
+// the currentPlayer at the time it was clicked
+
+// the checkWins function is run and passed the currentPlayer variable 
+// which checks the current state of spaces for a matching pattern
+
+// a new line has to be added to checkWins to check if all spaces are full to 
+// declare a draw
+//  END NOTES -------------------------------------------------------------------------
+
+// this stores the current state of the spaces
+// whether the space is open, X or O
+
 let spaces = {
-  spaceOne: 'X',
-  spaceTwo: 'O',
-  spaceThree: 'O',
+  spaceOne: 'open',
+  spaceTwo: 'open',
+  spaceThree: 'open',
   spaceFour: 'open',
-  spaceFive: 'X',
+  spaceFive: 'open',
   spaceSix: 'open',
-  spaceSeven: 'O',
+  spaceSeven: 'open',
   spaceEight: 'open',
-  spaceNine: 'X'
+  spaceNine: 'open'
 }
 
+// this counts the open spaces in the board
+const checkIfBoardIsFull = () => {
+  // Gavin didn't go over this either, but it loops over properties in an object the same
+  // way forEach loops over elements in an array
+  for (let key in spaces) {
+    // basically if spaces.[whatever space it's looking at] is = to 'open'
+    if (spaces[key] === 'open') {
+      // log that to the console
+      console.log('still playing')
+      // this will eventually run thru another statement that will declare a draw when that
+      // count is 0
+    }
+  }
+}
+
+// logic for determining winning spaces
 const checkWins = (player) => {
   if (spaces.spaceOne === player && spaces.spaceTwo === player && spaces.spaceThree === player) {
     return player
@@ -79,8 +114,7 @@ const checkWins = (player) => {
     return player
   }
 }
-
-console.log(checkWins('X'))
+// NOTES -------------------------------------------------------------------------
 
 // if space 1 is an X and space 2 is an X and space 3 is an X: X wins
 // if space 4 is an X and space 5 is an X and space 6 is an X: X wins
@@ -113,5 +147,6 @@ console.log(checkWins('X'))
 // If a winner is determined or game results in a tie the game is over
 // The players can chose to play again if they wish
 // Players may keep score if they wish
+// END NOTES -------------------------------------------------------------------------
 
 document.addEventListener('DOMContentLoaded', main)
