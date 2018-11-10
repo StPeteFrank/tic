@@ -44,7 +44,7 @@ buttons.forEach(button => {
   button.addEventListener('click', () => {
     playerOne ? button.textContent = 'O' : button.textContent = 'X'
     playerOne ? playerOne = false : playerOne = true
-    button.removeEventListener('click')
+    button.setAttribute('disabled', 'disabled')
   })
 })
 
