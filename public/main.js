@@ -29,16 +29,35 @@ const main = () => {
 //   spaceNine: 'open',
 // }
 
+let playerOne = true
+
+const alternatePlayers = () => {
+  if (playerOne) {
+    console.log(button)
+    this.textContent = 'X'
+  }
+}
+
+const buttons = document.querySelectorAll('button')
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    playerOne ? button.textContent = 'O' : button.textContent = 'X'
+    playerOne ? playerOne = false : playerOne = true
+    button.removeEventListener('click')
+  })
+})
+
 let spaces = {
-  spaceOne: 'O',
-  spaceTwo: 'open',
-  spaceThree: 'open',
+  spaceOne: 'X',
+  spaceTwo: 'O',
+  spaceThree: 'O',
   spaceFour: 'open',
-  spaceFive: 'O',
+  spaceFive: 'X',
   spaceSix: 'open',
-  spaceSeven: 'open',
+  spaceSeven: 'O',
   spaceEight: 'open',
-  spaceNine: 'open'
+  spaceNine: 'X'
 }
 
 const checkWins = (player) => {
@@ -61,7 +80,7 @@ const checkWins = (player) => {
   }
 }
 
-console.log(checkWins('O'))
+console.log(checkWins('X'))
 
 // if space 1 is an X and space 2 is an X and space 3 is an X: X wins
 // if space 4 is an X and space 5 is an X and space 6 is an X: X wins
