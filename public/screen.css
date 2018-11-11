@@ -18,6 +18,13 @@ header {
   justify-content: center;
   background-position: center;
 }
+h1 {
+  display: flex;
+  border-style: solid;
+  border-color: rgb(9, 175, 175);
+  border-radius: 6px;
+  padding: 1vw;
+}
 
 header img {
   opacity: 0.5;
@@ -30,7 +37,7 @@ section {
   background-position: center;
 }
 
-button {
+.playButton {
   border-radius: 6px;
   width: 20vw;
   height: 20vw;
@@ -38,6 +45,22 @@ button {
   font-size: 3rem;
   padding: 0;
   margin: 0;
+}
+.reset-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  padding: 2vw;
+}
+.replayButton {
+  /* display: flex; */
+  border: solid 3px rgb(9, 175, 175);
+  /* height: 5vw;
+  width: 5vw; */
+  border-radius: 6px;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .the-rows {
