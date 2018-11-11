@@ -28,7 +28,7 @@ let playerOne = false
 // querySelectorAll makes an array-like object for each button
 // forEach statement attaches an event handler to each of those
 // (gavin didn't cover this, just saves having to attach the event individually)
-document.querySelectorAll('button').forEach(button => {
+document.querySelectorAll('.playButton').forEach(button => {
   button.addEventListener('click', () => {
     let currentPlayer
     // this checks the status of playerOne and if true - 
@@ -81,7 +81,7 @@ let spaces = {
 // this counts the open spaces in the board
 const checkIfBoardIsFull = () => {
   // this counts the all the spaces that have been disabled
-  let leftovers = document.querySelectorAll('button[disabled]').length
+  let leftovers = document.querySelectorAll('.playButton[disabled]').length
   if (leftovers >= 9) {
     console.log('draw')
   }
@@ -94,7 +94,7 @@ const checkIfBoardIsFull = () => {
 }
 
 const closeBoard = () => {
-  document.querySelectorAll('button').forEach(button => button.setAttribute('disabled', 'disabled'))
+  document.querySelectorAll('.playButton').forEach(button => button.setAttribute('disabled', 'disabled'))
 }
 
 // logic for determining winning spaces
