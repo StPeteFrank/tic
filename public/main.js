@@ -78,39 +78,50 @@ let spaces = {
   spaceEight: 'open',
   spaceNine: 'open'
 }
-
 // this counts the open spaces in the board
 const checkIfBoardIsFull = () => {
-  // Gavin didn't go over this either, but it loops over properties in an object the same
-  // way forEach loops over elements in an array
-  for (let key in spaces) {
-    // basically if spaces.[whatever space it's looking at] is = to 'open'
-    if (spaces[key] === 'open') {
-      // log that to the console
-      console.log('still playing')
-      // this will eventually run thru another statement that will declare a draw when that
-      // count is 0
-    }
+  // this counts the all the spaces that have been disabled
+  let leftovers = document.querySelectorAll('button[disabled]').length
+  if (leftovers >= 9) {
+    console.log('game over')
   }
+
+  // console.log(lef5tOverSpaces)
+  // this will eventually run thru another statement that will declare a draw when that
+  // count is 0
+  // }
+  // }
+}
+
+const closeBoard = () => {
+  document.querySelectorAll('button').forEach(button => button.setAttribute('disabled', 'disabled'))
 }
 
 // logic for determining winning spaces
 const checkWins = (player) => {
   if (spaces.spaceOne === player && spaces.spaceTwo === player && spaces.spaceThree === player) {
+    closeBoard()
     return player
   } else if (spaces.spaceFour === player && spaces.spaceFive === player && spaces.spaceSix === player) {
+    closeBoard()
     return player
   } else if (spaces.spaceSeven === player && spaces.spaceEight === player && spaces.spaceNine === player) {
+    closeBoard()
     return player
   } else if (spaces.spaceOne === player && spaces.spaceFour === player && spaces.spaceSeven === player) {
+    closeBoard()
     return player
   } else if (spaces.spaceTwo === player && spaces.spaceFive === player && spaces.spaceEight === player) {
+    closeBoard()
     return player
   } else if (spaces.spaceThree === player && spaces.spaceSix === player && spaces.spaceNine === player) {
+    closeBoard()
     return player
   } else if (spaces.spaceOne === player && spaces.spaceFive === player && spaces.spaceNine === player) {
+    closeBoard()
     return player
   } else if (spaces.spaceThree === player && spaces.spaceFive === player && spaces.spaceSeven === player) {
+    closeBoard()
     return player
   }
 }
