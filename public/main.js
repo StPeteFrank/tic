@@ -25,6 +25,14 @@ const main = () => {
 // sets 1st player to either X or O - true is O, false is X 
 let playerOne = false
 
+document.querySelector('.reset-button').addEventListener('click', () => {
+  document.querySelectorAll('.playButton').forEach(button => {
+    button.innerHTML = '&nbsp;'
+    button.removeAttribute('disabled')
+    playerOne = false
+  })
+})
+
 // querySelectorAll makes an array-like object for each button
 // forEach statement attaches an event handler to each of those
 // (gavin didn't cover this, just saves having to attach the event individually)
