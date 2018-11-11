@@ -99,12 +99,6 @@ const checkIfBoardIsFull = () => {
   if (leftovers >= 9) {
     document.querySelector('.win-status').textContent = `Draw!`
   }
-
-  // console.log(lef5tOverSpaces)
-  // this will eventually run thru another statement that will declare a draw when that
-  // count is 0
-  // }
-  // }
 }
 
 const closeBoard = (player) => {
@@ -116,28 +110,20 @@ const closeBoard = (player) => {
 const checkWins = (player) => {
   if (spaces.spaceOne === player && spaces.spaceTwo === player && spaces.spaceThree === player) {
     closeBoard(player)
-    console.log(`${player} wins!`)
   } else if (spaces.spaceFour === player && spaces.spaceFive === player && spaces.spaceSix === player) {
     closeBoard(player)
-    console.log(`${player} wins!`)
   } else if (spaces.spaceSeven === player && spaces.spaceEight === player && spaces.spaceNine === player) {
     closeBoard(player)
-    console.log(`${player} wins!`)
   } else if (spaces.spaceOne === player && spaces.spaceFour === player && spaces.spaceSeven === player) {
     closeBoard(player)
-    console.log(`${player} wins!`)
   } else if (spaces.spaceTwo === player && spaces.spaceFive === player && spaces.spaceEight === player) {
     closeBoard(player)
-    console.log(`${player} wins!`)
   } else if (spaces.spaceThree === player && spaces.spaceSix === player && spaces.spaceNine === player) {
     closeBoard(player)
-    console.log(`${player} wins!`)
   } else if (spaces.spaceOne === player && spaces.spaceFive === player && spaces.spaceNine === player) {
     closeBoard(player)
-    console.log(`${player} wins!`)
   } else if (spaces.spaceThree === player && spaces.spaceFive === player && spaces.spaceSeven === player) {
     closeBoard(player)
-    console.log(`${player} wins!`)
   }
 }
 // NOTES -------------------------------------------------------------------------
