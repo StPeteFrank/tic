@@ -83,7 +83,7 @@ const checkIfBoardIsFull = () => {
   // this counts the all the spaces that have been disabled
   let leftovers = document.querySelectorAll('button[disabled]').length
   if (leftovers >= 9) {
-    console.log('game over')
+    console.log('draw')
   }
 
   // console.log(lef5tOverSpaces)
@@ -101,27 +101,35 @@ const closeBoard = () => {
 const checkWins = (player) => {
   if (spaces.spaceOne === player && spaces.spaceTwo === player && spaces.spaceThree === player) {
     closeBoard()
+    console.log(`${player} wins!`)
     return player
   } else if (spaces.spaceFour === player && spaces.spaceFive === player && spaces.spaceSix === player) {
     closeBoard()
+    console.log(`${player} wins!`)
     return player
   } else if (spaces.spaceSeven === player && spaces.spaceEight === player && spaces.spaceNine === player) {
     closeBoard()
+    console.log(`${player} wins!`)
     return player
   } else if (spaces.spaceOne === player && spaces.spaceFour === player && spaces.spaceSeven === player) {
     closeBoard()
+    console.log(`${player} wins!`)
     return player
   } else if (spaces.spaceTwo === player && spaces.spaceFive === player && spaces.spaceEight === player) {
     closeBoard()
+    console.log(`${player} wins!`)
     return player
   } else if (spaces.spaceThree === player && spaces.spaceSix === player && spaces.spaceNine === player) {
     closeBoard()
+    console.log(`${player} wins!`)
     return player
   } else if (spaces.spaceOne === player && spaces.spaceFive === player && spaces.spaceNine === player) {
     closeBoard()
+    console.log(`${player} wins!`)
     return player
   } else if (spaces.spaceThree === player && spaces.spaceFive === player && spaces.spaceSeven === player) {
     closeBoard()
+    console.log(`${player} wins!`)
     return player
   }
 }
