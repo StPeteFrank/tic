@@ -29,7 +29,11 @@ document.querySelector('.reset-button').addEventListener('click', () => {
   document.querySelectorAll('.playButton').forEach(button => {
     button.innerHTML = '&nbsp;'
     button.removeAttribute('disabled')
+    document.querySelector('.win-status').textContent = ''
     playerOne = false
+    for (let prop in spaces) {
+      spaces[prop] = 'open'
+    }
   })
 })
 
@@ -57,8 +61,9 @@ document.querySelectorAll('.playButton').forEach(button => {
     // currently all this does is count the amount of spaces that are set to "open"
     // eventually it will use this to say the game is a draw when that number reaches 0
     checkIfBoardIsFull()
-    console.log(checkWins(currentPlayer))
+    checkWins(currentPlayer)
   })
+
 })
 
 // NOTES -------------------------------------------------------------------------
@@ -86,12 +91,13 @@ let spaces = {
   spaceEight: 'open',
   spaceNine: 'open'
 }
+
 // this counts the open spaces in the board
 const checkIfBoardIsFull = () => {
   // this counts the all the spaces that have been disabled
   let leftovers = document.querySelectorAll('.playButton[disabled]').length
   if (leftovers >= 9) {
-    console.log('draw')
+    document.querySelector('.win-status').textContent = `Draw!`
   }
 
   // console.log(lef5tOverSpaces)
@@ -101,44 +107,37 @@ const checkIfBoardIsFull = () => {
   // }
 }
 
-const closeBoard = () => {
+const closeBoard = (player) => {
+  document.querySelector('.win-status').textContent = `${player} wins!`
   document.querySelectorAll('.playButton').forEach(button => button.setAttribute('disabled', 'disabled'))
 }
 
 // logic for determining winning spaces
 const checkWins = (player) => {
   if (spaces.spaceOne === player && spaces.spaceTwo === player && spaces.spaceThree === player) {
-    closeBoard()
+    closeBoard(player)
     console.log(`${player} wins!`)
-    return player
   } else if (spaces.spaceFour === player && spaces.spaceFive === player && spaces.spaceSix === player) {
-    closeBoard()
+    closeBoard(player)
     console.log(`${player} wins!`)
-    return player
   } else if (spaces.spaceSeven === player && spaces.spaceEight === player && spaces.spaceNine === player) {
-    closeBoard()
+    closeBoard(player)
     console.log(`${player} wins!`)
-    return player
   } else if (spaces.spaceOne === player && spaces.spaceFour === player && spaces.spaceSeven === player) {
-    closeBoard()
+    closeBoard(player)
     console.log(`${player} wins!`)
-    return player
   } else if (spaces.spaceTwo === player && spaces.spaceFive === player && spaces.spaceEight === player) {
-    closeBoard()
+    closeBoard(player)
     console.log(`${player} wins!`)
-    return player
   } else if (spaces.spaceThree === player && spaces.spaceSix === player && spaces.spaceNine === player) {
-    closeBoard()
+    closeBoard(player)
     console.log(`${player} wins!`)
-    return player
   } else if (spaces.spaceOne === player && spaces.spaceFive === player && spaces.spaceNine === player) {
-    closeBoard()
+    closeBoard(player)
     console.log(`${player} wins!`)
-    return player
   } else if (spaces.spaceThree === player && spaces.spaceFive === player && spaces.spaceSeven === player) {
-    closeBoard()
+    closeBoard(player)
     console.log(`${player} wins!`)
-    return player
   }
 }
 // NOTES -------------------------------------------------------------------------

@@ -18,6 +18,7 @@ header {
   justify-content: center;
   background-position: center;
 }
+
 h1 {
   display: flex;
   border-style: solid;
@@ -46,21 +47,28 @@ section {
   padding: 0;
   margin: 0;
 }
+
 .reset-area {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-position: center;
   padding: 2vw;
 }
+
 .replayButton {
-  /* display: flex; */
+  display: block;
   border: solid 3px rgb(9, 175, 175);
   /* height: 5vw;
   width: 5vw; */
   border-radius: 6px;
   font-size: 2rem;
   font-weight: bold;
+}
+
+.win-status {
+  font-size: 3rem;
 }
 
 .the-rows {
