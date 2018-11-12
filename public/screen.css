@@ -42,10 +42,10 @@ section {
 
 .playButton {
   /* border-radius: 6px; */
-  width: 20vw;
-  height: 20vw;
+  width: 15vw;
+  height: 15vw;
   background-color: transparent;
-  font-size: 3rem;
+  font-size: 5vw;
   padding: 0;
   margin: 4px;
   font-family: outdoorFont;
@@ -101,7 +101,7 @@ section {
   font-family: outdoorFont;
   text-align: center;
   vertical-align: middle;
-  line-height: 5rem;
+  line-height: 3rem;
   border: none;
   cursor: pointer;
 }
