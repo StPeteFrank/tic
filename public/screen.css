@@ -51,7 +51,6 @@ section {
   font-family: outdoorFont;
   color: rgb(41, 223, 223);
   border-color: rgb(41, 223, 223);
-  /* cursor: pointer; */
   cursor: url('hikingImageTwo.png'), auto;
 }
 
@@ -59,30 +58,38 @@ section {
   border-left: none;
   border-top: none;
 }
+
 .space-two {
   border-top: none;
 }
+
 .space-three {
   border-right: none;
   border-top: none;
 }
+
 .space-four {
   border-left: none;
 }
+
 .space-six {
   border-right: none;
 }
+
 .space-seven {
   border-left: none;
   border-bottom: none;
 }
+
 .space-eight {
   border-bottom: none;
 }
+
 .space-nine {
   border-right: none;
   border-bottom: none;
 }
+
 .reset-area {
   display: flex;
   flex-direction: column;
