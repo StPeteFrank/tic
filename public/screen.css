@@ -42,8 +42,8 @@ section {
 
 .playButton {
   /* border-radius: 6px; */
-  width: 15vw;
-  height: 15vw;
+  width: 10vw;
+  height: 10vw;
   background-color: transparent;
   font-size: 5vw;
   padding: 0;
@@ -107,7 +107,7 @@ section {
 }
 
 .win-status {
-  font-size: 3rem;
+  font-size: 7vw;
   color: rgb(41, 223, 223);
   font-family: outdoorFont;
 }
