@@ -1,9 +1,5 @@
 # Tic-Tac-Toe
 
-<p align="center">
-<img src="src/TicTacToeGIF.gif">
-</p>
-
 ## Description
 
 A Tic-Tac-Toe app built using basic JavaScript, HTML, and CSS.
